@@ -8,7 +8,10 @@ public with sharing class ChangePasswordController {
     
     public PageReference changePassword() {
         System.debug(true);//change 344565
-        return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
+        return Site.changePassword(newPassword, verifyNewPassword, oldpassword); 
+        for(integer i=0;i<10;i++){
+                List<account> acc = [Select Id from account limit 1];
+        }
     }     
     
    	public ChangePasswordController() {}
