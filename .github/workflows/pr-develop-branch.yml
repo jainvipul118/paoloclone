@@ -27,13 +27,6 @@ jobs:
         # can specify which OS this VM should run on. 
         # In this case, we are going to run our commands on the latest version
         # of ubuntu
-       permissions:
-        # required for all workflows
-        security-events: write
-
-        # only required for workflows in private repositories
-        actions: read
-        contents: read
         if: ${{ github.actor != 'dependabot[bot]' }}
         steps:
             # Now we install nodejs in the VM, and specify version 14
