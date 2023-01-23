@@ -28,11 +28,12 @@ jobs:
         # In this case, we are going to run our commands on the latest version
         # of ubuntu
        permissions:
-            id-token: write
-            contents: write              # This is required for actions/checkout@v1
-            security-events: write   # To upload sarif files
-            actions: read
-        runs-on: ubuntu-latest
+        # required for all workflows
+        security-events: write
+
+        # only required for workflows in private repositories
+        actions: read
+        contents: read
         if: ${{ github.actor != 'dependabot[bot]' }}
         steps:
             # Now we install nodejs in the VM, and specify version 14
