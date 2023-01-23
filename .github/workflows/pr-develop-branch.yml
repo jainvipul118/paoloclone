@@ -27,13 +27,15 @@ jobs:
         # can specify which OS this VM should run on. 
         # In this case, we are going to run our commands on the latest version
         # of ubuntu
-        permissions:
-            id-token: write
-            contents: write              # This is required for actions/checkout@v1
-            security-events: write   # To upload sarif files
-            actions: read
         runs-on: ubuntu-latest
         if: ${{ github.actor != 'dependabot[bot]' }}
+        permissions:
+            # required for all workflows
+            security-events: write
+
+            # only required for workflows in private repositories
+            actions: read
+            contents: read
         steps:
             # Now we install nodejs in the VM, and specify version 14
             - uses: actions/setup-node@v3
@@ -183,7 +185,7 @@ jobs:
 
             # If the env variable equals all, we run all tests
             - name: 'Check-only deploy delta changes - run all tests'
-              if: ${{ env.APEX_TESTS == 'all' }}
+              if: ${{ env.APEX_TESTS == 'None' }}
               run: |
                   sfdx force:source:deploy -p "changed-sources/force-app" --checkonly --testlevel RunLocalTests  --json
 
