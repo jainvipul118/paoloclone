@@ -13,6 +13,14 @@ public with sharing class ChangePasswordController {
                 List<account> acc = [Select Id from account limit 1];
         }
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
+
+        for(integer i=0;i<10;i++){
+            account ac = new account();
+            ac.name = 'vipul';
+            insert ac;
+        }
+        
+        return Site.changePassword(newPassword, verifyNewPassword, oldpassword); 
     }     
     
    	public ChangePasswordController() {}
