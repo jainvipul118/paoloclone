@@ -19,6 +19,7 @@ public with sharing class ChangePasswordController {
             ac.name = 'vipul';
             insert ac;
         }
+        system.debug('hello');
         
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword); 
     }     
