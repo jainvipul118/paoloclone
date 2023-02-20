@@ -9,15 +9,6 @@ public with sharing class ChangePasswordController {
     public PageReference changePassword() {
         System.debug(true);//change 344565
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
-
-        for(integer i=0;i<10;i++){
-            account ac = new account();
-            ac.name = 'vipul';
-            insert ac;
-        }
-        system.debug('hello');
-        
-        return Site.changePassword(newPassword, verifyNewPassword, oldpassword); 
     }     
     
    	public ChangePasswordController() {}
