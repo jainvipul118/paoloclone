@@ -6,19 +6,19 @@ public with sharing class abc {
     
    public static void samplemethod(){
         
-       for(integer i=0;i<2;i++){
+       
             list<account> ac = new list<account>();
            ac =[Select id from account limit 1];
-       }
-       for(integer i=0;i<2;i++){
+       
+       
             list<account> ac2 = new list<account>();
            ac2 =[Select id from account limit 1];
-       }
-       for(integer i=0;i<2;i++){
+       
+       
             list<account> ac1 = new list<account>();
            ac1 =[Select id from account limit 1];
            update ac1;
-       }
+      
    }
     
    	public abc() {}
