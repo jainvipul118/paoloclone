@@ -11,6 +11,7 @@ public with sharing class ChangePasswordController {
         System.debug(false);//change 344565
         System.debug(true);//change 344565
         System.debug(false);//change 344565
+        System.debug('hello');//change 344568
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
     }     
     
