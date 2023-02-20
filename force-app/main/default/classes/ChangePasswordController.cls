@@ -1,5 +1,5 @@
 /**
- * An apex page controller that exposes the change password functionality , this is for test
+ * An apex page controller that exposes the change password functionality
  */
 public with sharing class ChangePasswordController {
     public String oldPassword {get; set;}
@@ -8,10 +8,6 @@ public with sharing class ChangePasswordController {
     
     public PageReference changePassword() {
         System.debug(true);//change 344565
-        system.debug(false);// new code
-        for(integer i=0;i<10;i++){
-                List<account> acc = [Select Id from account limit 1];
-        }
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
 
         for(integer i=0;i<10;i++){
