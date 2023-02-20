@@ -20,6 +20,6 @@ jobs:
         with:
           pmdconfig: ruleset.xml
           severity-threshold: 4
-          strictly-enforced-rules: '[{ "engine": "pmd", "category": "Performance", "rule": "AvoidDebugStatements" }]'
+          strictly-enforced-rules: '[{ "engine": "pmd", "category": "Performance", "rule": "AvoidDebugStatements,AvoidDmlStatementsInLoops" }]'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
