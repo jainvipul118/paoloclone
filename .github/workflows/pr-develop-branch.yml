@@ -29,13 +29,6 @@ jobs:
         # of ubuntu
         runs-on: ubuntu-latest
         if: ${{ github.actor != 'dependabot[bot]' }}
-        permissions:
-            # required for all workflows
-            security-events: write
-
-            # only required for workflows in private repositories
-            actions: read
-            contents: read
         steps:
             # Now we install nodejs in the VM, and specify version 14
             - uses: actions/setup-node@v3
@@ -164,12 +157,12 @@ jobs:
             - name: 'Scan code'
               run: |
                   cd changed-sources
-                  sfdx scanner:run --format sarif --pmdconfig  'ruleset.xml' --target 'force-app/main/default/classes' --outfile 'apexScanResults.sarif'  
+                  sfdx scanner:run --format sarif --target './**/*.cls' --category "Design,Best Practices,Performance" --outfile 'apexScanResults.sarif'  
                   cd ..
 
             # Now we upload the .sarif file as explained in the previous step
             - name: Upload SARIF file
-              uses: github/codeql-action/upload-sarif@v2
+              uses: github/codeql-action/upload-sarif@v1
               with:
                 sarif_file: changed-sources/apexScanResults.sarif
 
@@ -185,7 +178,7 @@ jobs:
 
             # If the env variable equals all, we run all tests
             - name: 'Check-only deploy delta changes - run all tests'
-              if: ${{ env.APEX_TESTS == 'None' }}
+              if: ${{ env.APEX_TESTS == 'all' }}
               run: |
                   sfdx force:source:deploy -p "changed-sources/force-app" --checkonly --testlevel RunLocalTests  --json
 
