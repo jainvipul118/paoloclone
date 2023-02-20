@@ -13,6 +13,7 @@ public with sharing class abcxyz {
         System.debug(false);//change 344565
         System.debug('hello12');//change 344568
         system.debug('12345');
+        system.debug('123456');
         for(integer i=0;<i<2;i++){
                 account ac = new account(name='test');
             insert ac;
