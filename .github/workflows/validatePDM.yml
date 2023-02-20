@@ -1,13 +1,24 @@
-name: PMD Source Code Analyzer on Push
-
-on: [push]
-
+name: Static Analysis
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  workflow_dispatch:
 jobs:
-  pmd:
-  
+  analyze:
     runs-on: ubuntu-latest
-    
     steps:
-      - uses: sfdx-actions/setup-pmd@v1
-      - name: run-pmd
-        run: pmd -d ./force-app/main/default/classes -R ./scripts/abc.xml -f text
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install SFDX CLI and Scanner
+        run: |
+          npm install sfdx-cli
+          node_modules/sfdx-cli/bin/run plugins:install @salesforce/sfdx-scanner
+      - name: Run SFDX Scanner - Report findings as comments
+        uses: mitchspano/sfdx-scan-pull-request@v0.1.7
+        with:
+          pmdconfig: ruleset.xml
+          severity-threshold: 4
+          strictly-enforced-rules: '[{ "engine": "pmd", "category": "Performance", "rule": "AvoidDebugStatements" }]'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
