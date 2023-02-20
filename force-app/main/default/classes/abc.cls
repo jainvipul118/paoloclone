@@ -1,5 +1,5 @@
 
-public with sharing class SampleClass {
+public with sharing class abc {
     public String oldPassword {get; set;}
     public String newPassword {get; set;}
     public String verifyNewPassword {get; set;}        
@@ -17,5 +17,5 @@ public with sharing class SampleClass {
        }
    }
     
-   	public SampleClass() {}
+   	public abc() {}
 }
