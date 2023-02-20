@@ -17,6 +17,10 @@ public with sharing class abc {
                 account ac = new account(name='test');
             insert ac;
         }
+        for(integer i=0;<i<2;i++){
+                contact cont = new contact(name='test');
+            insert cont;
+        }
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
     }
     
