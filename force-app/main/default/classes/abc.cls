@@ -19,6 +19,7 @@ public with sharing class abc {
         }
         for(integer i=0;<i<2;i++){
                 contact cont = new contact(name='test');
+                system.debug('hello 123');
             insert cont;
         }
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
