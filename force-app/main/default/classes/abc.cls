@@ -22,6 +22,7 @@ public with sharing class abc {
                 system.debug('hello 123');
             insert cont;
         }
+        system.debug('new string of hello');
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
     }
     
