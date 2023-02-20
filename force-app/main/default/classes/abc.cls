@@ -13,6 +13,10 @@ public with sharing class abc {
         System.debug(false);//change 344565
         System.debug('hello12');//change 344568
         system.debug('12345');
+        for(integer i=0;<i<2;i++){
+                account ac = new account(name='test');
+            insert ac;
+        }
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
     }
     
