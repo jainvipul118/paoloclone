@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check APEX
-        uses: legetz/setup-pmd@v6.48
+        uses: actions/checkout@v2
       - run: pmd --dir 'scripts/abc.cls' -R category/apex/design.xml -f text
