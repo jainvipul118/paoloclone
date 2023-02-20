@@ -13,7 +13,7 @@ public with sharing class SampleClass {
        for(integer i=0;i<2;i++){
             list<account> ac1 = new list<account>();
            ac1 =[Select id from account limit 1];
-           update ac;
+           update ac1;
        }
    }
     
