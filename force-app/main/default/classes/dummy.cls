@@ -8,7 +8,7 @@ public with sharing class Dummy {
    
     /**
      * @description Bar
-     * @return Bar
+     * 
      */
    public static void samplemethod(){
         
