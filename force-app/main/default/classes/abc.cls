@@ -19,7 +19,7 @@ public with sharing class abc {
            ac1 =[Select id from account limit 1];
            update ac1;
            list<account> ac3 = new list<account>();
-           ac3 =[Select id from account limit 1 WITH SECURITY_ENFORCED];
+           ac3 =[Select id from account WITH SECURITY_ENFORCED];
            if (Schema.sObjectType.Account.fields.Name.isUpdateable()) {
             update ac3;
         }
