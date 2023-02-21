@@ -18,6 +18,9 @@ public with sharing class abc {
             list<account> ac1 = new list<account>();
            ac1 =[Select id from account limit 1];
            update ac1;
+           list<account> ac3 = new list<account>();
+           ac3 =[Select Name from account WITH SECURITY_ENFORCED];
+           
       
    }
     
