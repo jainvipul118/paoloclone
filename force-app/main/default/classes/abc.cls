@@ -20,7 +20,7 @@ public with sharing class abc {
            update ac1;
            list<account> ac3 = new list<account>();
            ac3 =[Select id,Name from account WITH SECURITY_ENFORCED];
-           if (Schema.sObjectType.Account.fields.Name.isUpdateable()) {
+           if (Schema.sObjectType.Account.isUpdateable() && schema.sObjectType.Account.fields.Name.isUpdateable()) {
             ac3[0].Name = 'xyz';
             update ac3;
         }
