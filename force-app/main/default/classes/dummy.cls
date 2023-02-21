@@ -5,10 +5,8 @@ public with sharing class dummy {
     
    public static void samplemethod(){
         
-       
-           
            list<account> ac3 = new list<account>();
-           
+
            ac3 =[Select Name from account WITH SECURITY_ENFORCED];
            
       
