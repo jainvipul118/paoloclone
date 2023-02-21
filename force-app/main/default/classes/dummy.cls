@@ -2,9 +2,9 @@
  * @description Hello World
  */
 public with sharing class Dummy {
-    public String oldPassword {get; set;}
-    public String newPassword {get; set;}
-    public String verifyNewPassword {get; set;}        
+    public String oldPassword {get; set;}// THIS IS VARIABLE
+    public String newPassword {get; set;}// THIS IS VARIABLE
+    public String verifyNewPassword {get; set;}    // THIS IS VARIABLE    
    
     /**
      * @description Bar
@@ -12,12 +12,12 @@ public with sharing class Dummy {
      */
    public static void samplemethod(){
         
-           list<account> ac3 = new list<account>();
+           list<account> ac3 = new list<account>();// THIS IS VARIABLE
 
            ac3 =[Select Name from account WITH SECURITY_ENFORCED];
            
       
    }
     
-    public Dummy() {}
+    
 }
