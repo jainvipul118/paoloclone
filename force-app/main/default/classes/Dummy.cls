@@ -1,34 +1,17 @@
-/**
- * @description Hello World
- */
-public with sharing class Dummy {
-    /**
-    * @description Hello World
-     */
-    public String oldPassword {get; set;}// THIS IS VARIABLE
-     /**
-    * @description Hello World
-     */
-    public String newPassword {get; set;}// THIS IS VARIABLE
-     /**
-    * @description Hello World
-     */
-    public String verifyNewPassword {get; set;}    // THIS IS VARIABLE    
-   
-    /**
-     * @description Bar
-     * 
-     */
+public with sharing class dummy {
+    public String oldPassword {get; set;}
+    public String newPassword {get; set;}
+    public String verifyNewPassword {get; set;}        
+    
    public static void samplemethod(){
-           /**
-            * @description Hello World
-            */
-           list<account> ac3 = new list<account>();// THIS IS VARIABLE
-
+        
+       
+           
+           list<account> ac3 = new list<account>();
            ac3 =[Select Name from account WITH SECURITY_ENFORCED];
            
       
    }
     
-    
+    public dummy() {}
 }
