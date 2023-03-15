@@ -25,7 +25,7 @@ public with sharing class BadgingDemo {
             */
            list<account> ac3 = new list<account>();// THIS IS VARIABLE
 
-           ac3 =[Select Name from account Limit 1];
+           ac3 =[Select Name from account WITH SECURITY_ENFORCED];
            
       
    }
