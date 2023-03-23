@@ -5,6 +5,9 @@ public with sharing class abc {
     public String verifyNewPassword {get; set;}        
     
    public static void samplemethod(){
+     // test 1
+     // test 2
+     // test 3
         
        
             list<account> ac = new list<account>();
